@@ -1,0 +1,18 @@
+﻿<h1>Order Page</h1>
+
+<form method="post">
+    <label for="orderId">Enter Order ID:</label>
+    <input type="number" id="orderId" name="orderId" required>
+    <button type="submit">Get Order</button>
+</form>
+
+@if (Model != null && Model.Count > 0)
+{
+    <h2>Order Information</h2>
+    @foreach (var order in Model)
+    {
+        <p>Order ID: @order.emirNo</p>
+        <p>Company: @order.sirketAdi</p>
+        <!-- Diğer sipariş detayları burada görüntülenebilir -->
+    }
+}
